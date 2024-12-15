@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ChatService from '../../services/ChatService';
+import ChatService from '../services/ChatService';
 
 const ChatOverlay = () => {
     const [messages, setMessages] = useState([]);
