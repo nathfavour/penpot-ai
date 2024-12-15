@@ -11,7 +11,7 @@ export default defineConfig({
   ],
   base: '/penpot-ai-ollama',
   build: {
-    outDir: 'dist',
+    outDir: 'docs',
     assetsDir: 'assets',
     rollupOptions: {
       input: {
