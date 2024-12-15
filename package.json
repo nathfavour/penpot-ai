@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite-live-preview",
     "build": "tsc && vite build",
-    "build:plugin": "esbuild your-folder/plugin.ts --minify --outfile=your-folder/public/plugin.js"
+    "build:plugin": "esbuild src/plugin.ts --minify --outfile=your-folder/public/plugin.js"
 
   },
   "dependencies": {
