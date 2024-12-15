@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import ChatOverlay from './components/ChatOverlay';
+import ChatOverlay from './src/components/ChatOverlay';
 
 const App = () => (
     <BrowserRouter basename="/penpot-ai-ollama">
