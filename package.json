@@ -5,13 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite-live-preview",
-    "build": "tsc && vite build"
+    "build": "tsc && vite build",
+    "build:plugin": "esbuild your-folder/plugin.ts --minify --outfile=your-folder/public/plugin.js"
+
   },
   "dependencies": {
     "@penpot/plugin-styles": "1.0.0",
     "@penpot/plugin-types": "1.0.0"
   },
   "devDependencies": {
+    "esbuild": "^0.24.0",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "vite-live-preview": "^0.2.2"
