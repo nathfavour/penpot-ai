@@ -1,5 +1,6 @@
 {
   "name": "penpot-ai-ollama",
+  "homepage": "https://nathfavour.github.io/penpot-ai-ollama/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
