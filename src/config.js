@@ -3,7 +3,7 @@ const config = {
         openAI: '',
         otherAI: ''
     },
-    localOllamaEndpoint: 'http://localhost:5000'
+    localOllamaEndpoint: 'http://localhost:11434/api/generate'
 };
 
 export default config;
