@@ -19,7 +19,7 @@ Penpot AI Assistant seamlessly integrates local AI models through Ollama, bringi
 
 ## 🎮 Quick Start
 
-1. 📦 Install Ollama on your machine
+1. 📦 Install Ollama on your machine (optional)
 2. 🔧 Install the plugin in Penpot
 3. 🚀 Start designing with AI assistance!
 
