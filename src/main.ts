@@ -39,12 +39,15 @@ const chatUI = {
         const apiKeyInput = document.querySelector('#api-key');
 
         button?.addEventListener('click', () => this.sendMessage());
-        input?.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') this.sendMessage();
+        input?.addEventListener('keydown', (e: Event) => {
+            if ((e as KeyboardEvent).key === 'Enter') this.sendMessage();
         });
         modelSelect?.addEventListener('change', (e) => {
             aiConfig.model = (e.target as HTMLSelectElement).value;
             parent.postMessage({ type: 'modelChange', model: aiConfig.model }, "*");
+        });
+        apiKeyInput?.addEventListener('change', (e) => {
+            aiConfig.apiKey = (e.target as HTMLInputElement).value;
         });
     },
 
