@@ -9,7 +9,7 @@ export default defineConfig({
     }),
     react()
   ],
-  base: '/plugins/ai-chat/',
+  base: '/penpot-ai-ollama',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
