@@ -7,7 +7,10 @@
   "scripts": {
     "dev": "vite-live-preview",
     "build": "tsc && vite build",
-    "build:plugin": "esbuild src/plugin.ts --minify --outfile=penpot-ai/public/plugin.js"
+    "build:plugin": "esbuild src/plugin.ts --minify --outfile=dist/plugin.js",
+    "build:all": "npm run build && npm run build:plugin",
+    "predeploy": "npm run build:all && cp dist/plugin.js dist/penpot-ai/public/ && touch dist/.nojekyll",
+    "deploy": "gh-pages -d dist --dotfiles true"
   },
   "dependencies": {
     "@penpot/plugin-styles": "1.0.0",
