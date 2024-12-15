@@ -1,12 +1,12 @@
 {
-  "name": "penpot-plugin-starter-template",
+  "name": "penpot-ai",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite-live-preview",
     "build": "tsc && vite build",
-    "build:plugin": "esbuild src/plugin.ts --minify --outfile=your-folder/public/plugin.js"
+    "build:plugin": "esbuild src/plugin.ts --minify --outfile=penpot-ai/public/plugin.js"
 
   },
   "dependencies": {

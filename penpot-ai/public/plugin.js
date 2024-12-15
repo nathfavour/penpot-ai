@@ -1,0 +1,1 @@
+"use strict";penpot.ui.open("Penpot plugin starter template",`?theme=${penpot.theme}`),penpot.ui.onMessage(t=>{if(t==="create-text"){const e=penpot.createText("Hello world!");e&&(e.x=penpot.viewport.center.x,e.y=penpot.viewport.center.y,penpot.selection=[e])}}),penpot.on("themechange",t=>{penpot.ui.sendMessage({source:"penpot",type:"themechange",theme:t})});
