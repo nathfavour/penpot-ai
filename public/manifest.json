@@ -1,5 +1,5 @@
 {
-  "name": "Penpot starter plugin",
+  "name": "penpot-ai-ollama",
   "code": "plugin.js",
   "description": "This is a starter plugin for Penpot",
   "permissions": ["content:read", "content:write"]
