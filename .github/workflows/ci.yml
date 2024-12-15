@@ -1,34 +1,19 @@
-name: CI
-
-on: [push, pull_request]
-
+name: Build
+on: 
+    push: 
+        branches:
+            - master
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [21.x]
-
-    steps:
-      - uses: actions/checkout@v2
-      - name: 🛠️ Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: 📦 Install dependencies
-        run: npm ci
-      - name: 🖌️ Format code
-        run: npm run format
-      - name: 🧹 Lint code
-        run: npm run lint
-      - name: 🔨 Build
-        run: npm run build
-      - name: 🧪 Test with coverage
-        run: npm run test
-      - name: 🚀 Deploy to GitHub Pages 🚀
-        if: github.ref == 'refs/heads/main'
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+    build:
+        runs-on: ubuntu-latest
+        steps: 
+            - name: Checkout project
+              uses: actions/checkout@v3
+            - name: Build and push
+              uses: alexthemaster/action-build-typescript@v. # check the releases tab on the right for versions (looks like this: v1.0.0)
+              # use this if you want the sharpest of cutting edges (can and probably WILL break from time to time)
+              # uses: alexthemaster/action-build-typescript@master
+              with:
+                pushToBranch: true # optional; can either be true or false | defaults to false
+                branch: 'dist' # optional; the name of the branch the action should push the compiled code to | defaults to dist
+                githubToken: ${{ secrets.GITHUB_TOKEN }} # required if you use the pushToBranch option
