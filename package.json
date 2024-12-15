@@ -7,11 +7,11 @@
     "dev": "vite-live-preview",
     "build": "tsc && vite build",
     "build:plugin": "esbuild src/plugin.ts --minify --outfile=penpot-ai/public/plugin.js"
-
   },
   "dependencies": {
     "@penpot/plugin-styles": "1.0.0",
-    "@penpot/plugin-types": "1.0.0"
+    "@penpot/plugin-types": "1.0.0",
+    "@vitejs/plugin-react": "^4.3.4"
   },
   "devDependencies": {
     "esbuild": "^0.24.0",

@@ -1,26 +1,31 @@
 penpot.ui.open("AI Chat Assistant", `?theme=${penpot.theme}`);
 
-let currentModel = 'ollama';
-const OLLAMA_ENDPOINT = 'http://localhost:11434/api/generate';
+let currentConfig = {
+    model: 'ollama',
+    endpoint: 'http://localhost:11434/api/generate',
+    ollamaModel: 'qwen2.5-coder:0.5b'
+};
 
 async function handleAIMessage(message: string) {
     try {
+        console.log('Processing message with config:', currentConfig);
         let response;
-        if (currentModel === 'ollama') {
-            response = await fetch(OLLAMA_ENDPOINT, {
+        
+        if (currentConfig.model === 'ollama') {
+            response = await fetch(currentConfig.endpoint, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    model: 'llama2',
-                    prompt: message
+                    model: currentConfig.ollamaModel,
+                    prompt: message,
+                    stream: false
                 })
             });
-        } else {
-            // Handle other AI models here
+            const data = await response.json();
+            console.log('Ollama response:', data);
+            return data.response;
         }
-
-        const data = await response?.json();
-        return data.response;
+        // Handle other AI models here
     } catch (error) {
         console.error('AI Chat Error:', error);
         return 'Sorry, there was an error processing your request.';
@@ -36,7 +41,8 @@ penpot.ui.onMessage(async (message) => {
             response
         });
     } else if (message.type === 'modelChange') {
-        currentModel = message.model;
+        currentConfig = { ...currentConfig, ...message.config };
+        console.log('Model configuration updated:', currentConfig);
     } else if (message === "create-text") {
         const text = penpot.createText("Hello world!");
 
