@@ -1,5 +1,5 @@
 {
-  "name": "penpot-ai",
+  "name": "penpot-ai-ollama",
   "private": true,
   "version": "0.0.0",
   "type": "module",
